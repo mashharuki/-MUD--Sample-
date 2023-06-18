@@ -20,5 +20,20 @@ export function defineContractComponents(world: World) {
         }
       );
     })(),
+    BalanceTable: (() => {
+      const tableId = new TableId("", "BalanceTable");
+      return defineComponent(
+        world,
+        {
+          value: RecsType.Number,
+        },
+        {
+          metadata: {
+            contractId: tableId.toHexString(),
+            tableId: tableId.toString(),
+          },
+        }
+      );
+    })(),
   };
 }
